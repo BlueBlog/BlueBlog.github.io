@@ -1,0 +1,84 @@
+  <html>
+    <head>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" href="CSS/Blog_1.css" rel="stylesheet">
+      <link rel=icon href="thing.png">
+      <title>Home</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+               <div class="nav-wrapper">
+                      <a class='dropdown-button' href='#' data-activates='dropdown1'> games </a>
+                      <ul id='dropdown1' class='dropdown-content'>
+                          <li><a href="Snake game/snake.html" target="_blank">snake</a></li>
+                      </ul>
+
+
+                    <ul class="right">
+                        <li><a href="index.html">Home <span class="new badge"><script id="poststoday-template" type="text/x-handlebars-template">{{poststoday}}</script></span></a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+ <div id="slide-out" class="side-nav fixed">
+      <a href="admin.html">Admin page</a>
+      <a href="#">Newest Post</a>
+                <h2>Post titles</h2>
+      <div id="post-titles">
+          <script id="Titles-template" type="text/x-handlebars-template">
+          {{#each posts}}
+          <div class="blog-post">
+           <a class="blog-post-title" href="#">{{title}}</a>
+          </div>
+            {{/each}} 
+           </script>
+      </div>
+    </div>
+            <div class="container">
+                <div class="row">
+                <h1 class="center-align">Blue Blog</h1>
+                </div>
+                <div class="row">
+                    <div class="col s9 main-container">
+                        
+                    </div>
+                </div>
+            </div>
+        </main>        
+        <footer class="page-footer">
+            <div>
+                <p><a href="#"><span class="white-text">back to the top</span></a></p>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    C 2016 Sami
+                </div>
+            </div>
+        </footer>
+        
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src ="libs/backendless.js"></script>
+      <script type="text/javascript" src ="js/blog.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+      <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+      
+      <script id="blogs-template" type="text/x-handlebars-template">
+          {{#each posts}}
+          <div class="blog-post">
+           <h2 class="blog-post-title">{{title}}</h2>
+            <p class="blog-post-meta">At {{format created}} by {{authorEmail}}</p>
+            <div>{{{content}}}</div>
+          </div>
+            {{/each}} 
+      </script>
+    </body>
+  </html>
