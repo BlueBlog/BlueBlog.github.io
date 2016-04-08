@@ -1,0 +1,18 @@
+body{margin:0;padding:20px;font-family: arial;color:white;background-color: #aa0000}
+#snake-screen{display:block;}
+.center{text-align: center;}
+#fail,#playHUD,#sMenu{position: absolute; visibility: hidden;text-align: center; margin: 0}
+
+#rbutton{border: 1px solid white;}
+#rbutton:hover{background-color:white;}
+
+#reloadpg{border: 1px solid white;}
+#reloadpg:hover{background-color:white;}
+
+#scoreBoard{margin: 0;padding: 0;}
+#idspeed75,#idspeed1,#idspeed25,#idspeed50,#idtimeAt{border: 1px solid white;}
+#idspeed75:hover{background-color:white;}
+#idspeed1:hover{background-color:white;}
+#idspeed25:hover{background-color:white;}
+#idspeed50:hover{background-color:white;}
+#idtimeAt:hover{background-color:black;}

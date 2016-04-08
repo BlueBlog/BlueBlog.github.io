@@ -1,0 +1,40 @@
+<!--...-->
+<html>
+    <head>
+        <title>snake</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="data:;base64,iVBORwOKGgo="><link rel=icon href="img/thing.png">
+    </head>
+    <body id="bod">
+        <section id="playHUD">
+            <h1 id="scoreBoard"></h1>
+        </section>
+        <section id="sMenu">
+            <h1>Welcome to this snake game</h1>
+            <h1>Use WASD or arrow keys.<br>Use R to restart instantly<br>Use M to toggle music</h1>
+            <h3 id="idspeed75">slow (75)</h3>
+            <h3 id="idspeed50">regular (50)</h3>
+            <h3 id="idspeed25">fast (25)</h3>
+            <h3 id="idspeed1">ludicrous speed (1)</h3>
+            <h3 id="idtimeAt">Time Attack mode (50)</h3>
+        </section>
+        <section id="fail">
+        <h1>
+            GAME OVER
+        </h1>
+        <h3 id="rbutton">
+            restart
+        </h3>
+            <h3 id="reloadpg">
+                main menu
+            </h3>
+            <h3 id="leaderB">
+            </h3>
+        </section>
+        <canvas id="snake-screen"><img id="snowy" src="snow.gif" alt="..."><img id="mushroom" src="mushrooom.gif" alt="..."></canvas>   
+        
+        <script src="js/snake.js"></script>
+    </body>
+</html>
