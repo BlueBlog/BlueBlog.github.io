@@ -21,7 +21,18 @@ $(function(){
         email = data[0].value,
         password = data[1].value;
         
-        Backendless.UserService.login(email, password, true, new Backendless.Async(userLoggedIn,gotError));
+        Backendless.UserService.login(email, password, true, new Backendless.Async(userLoggedIn,gotError1));
+    });
+    $(document).on('submit', '.form-signup', function(event){
+        
+        var user = new backendless.user();
+        email = data[0].value,
+        password = data[1].value;
+        
+        user.email = email;
+        user.paassword = password;
+        
+        Backendless.UserService.register(user);
     });
 
 $(document).on('click', '.add-blog',function(){
@@ -101,16 +112,28 @@ function userLoggedIn(user){
     $('.main-container').html(welcomeHTML);
 }
 function gotError(){
+     Materialize.toast('ERROR', 2000);
+     }
+     function gotError1(){
      Materialize.toast('ERROR EMAIL OR PASSWORD IS WRONG', 2000);
      }
      
+    var wrapper = {
+        posts: postsCollection.data
+    };
     Handlebars.registerHelper('poststoday',function () {
-    var ALPHA = 0;
-    
-        return ALPHA;
+        var ALPHA = 0;
+        var today = (new Date).getTime() - (86400000);
+        var query = {condition: "created >= " + today};
+        var Today1 = Backendless.Data.of( Posts ).find( query );
+        console.log(Today1);
+        console.log(today);
+        return Today1.data.length;
     });
         var blogScriptB = $("#poststoday-template").html();
     var blogTemplateB = Handlebars.compile(blogScriptB);
     var blogHTMLB =  blogTemplateB(wrapper);
     
     $('.badge').html(blogHTMLB);
+    
+    
