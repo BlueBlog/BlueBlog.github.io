@@ -17,7 +17,6 @@ $(function(){
         return moment(time).format("ddd, MMM Do YYYY");
     }); 
     Handlebars.registerHelper('poststoday',function () {
-        var ALPHA = 0;
         var today = (new Date).getTime() - (86400000);
         var query = {condition: "created >= " + today};
         var Today1 = Backendless.Data.of( Posts ).find( query );
